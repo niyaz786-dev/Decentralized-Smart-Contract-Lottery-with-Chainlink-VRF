@@ -1,0 +1,42 @@
+﻿dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@1.2.0
+  - OpenZeppelin/openzeppelin-contracts@4.8.0
+
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.2.0"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.8.0"
+    compilers:
+      - version: 0.4.24
+        optimizer:
+          enabled: true
+          runs: 200
+      - version: 0.6.6
+        optimizer:
+          enabled: true
+          runs: 200
+      - version: 0.8.26
+        optimizer:
+          enabled: true
+          runs: 200
+dotenv: .env
+networks:
+  default: ganache-local
+  ganache-local:
+    keyhash: "0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c"
+    fee: 250000000000000000
+    eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+
+  sepolia:
+    host: https://sepolia.infura.io/v3/c6e08f4f932245958612933d6798f145
+    vrf_coordinator: "0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B"
+    link_token: "0x779877A7B0D9E8603169DdbD7836e478b4624789"
+    eth_usd_price_feed: "0x694AA1769357215DE4FAC081bf1f309aDC325306"
+    keyhash: "0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae"
+
+    subscriptionId: 19844926771245328206675736722463108742762830847080296250433440628320566985725
+    verify: true
+
+wallets:
+  from_key: ${PRIVATE_KEY}

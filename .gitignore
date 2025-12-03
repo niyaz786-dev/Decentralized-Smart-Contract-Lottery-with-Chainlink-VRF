@@ -1,0 +1,21 @@
+# Bytecode and build artifacts
+build/
+# Brownie caches
+.cache/
+# Environment variables
+.env
+# Python virtual environment
+venv/
+__pycache__/
+# OS files
+.DS_Store
+Thumbs.db
+# IDE files
+.vscode/
+.idea/
+# Misc
+*.pyc
+
+# Documentation (Personal Study Guide)
+IMPLEMENTATION.md
+node_modules
